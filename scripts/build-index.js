@@ -12,24 +12,24 @@ const OUT_FILE = path.join(OUT, 'index.json');
 
 const TARGET_BROWSERS = ['chrome', 'firefox', 'safari', 'edge'];
 
-function readJSON(p) { 
+function readJSON(p) {
   try {
-    return JSON.parse(fs.readFileSync(p, 'utf8')); 
+    return JSON.parse(fs.readFileSync(p, 'utf8'));
   } catch (e) {
     console.warn(`Failed to read ${p}:`, e.message);
     return null;
   }
 }
 
-function stripHtml(s = '') { 
-  return s.replace(/<[^>]*>/g, '').trim(); 
+function stripHtml(s = '') {
+  return s.replace(/<[^>]*>/g, '').trim();
 }
 
 function loadReleases(browser) {
   const p = path.join(BROWSERS_DIR, `${browser}.json`);
   const json = readJSON(p);
   if (!json) return {};
-  
+
   // Handle different BCD structure variations
   if (json[browser]?.releases) {
     return json[browser].releases;
@@ -41,9 +41,9 @@ function loadReleases(browser) {
   return {};
 }
 
-function normalizeSupport(s) { 
+function normalizeSupport(s) {
   if (!s) return [];
-  return Array.isArray(s) ? s : [s]; 
+  return Array.isArray(s) ? s : [s];
 }
 
 function isStable(entry) {
@@ -59,22 +59,22 @@ function isUnstable(entry) {
   if (!entry) return false;
   if (entry.version_added === null || entry.version_added === true) return false;
   if (typeof entry.version_added !== 'string') return false;
-  
+
   // Check for unstable indicators
   return !!(entry.flags || entry.prefix || entry.alternative_name || entry.partial_implementation);
 }
 
 function compareVersions(a, b) {
   if (!a || !b) return 0;
-  
+
   // Handle version ranges like "≤37" or "37-38"
   const cleanA = a.replace(/[≤≥<>=]/g, '').split('-')[0];
   const cleanB = b.replace(/[≤≥<>=]/g, '').split('-')[0];
-  
+
   const na = cleanA.split('.').map(x => parseInt(x, 10)).filter(n => !Number.isNaN(n));
   const nb = cleanB.split('.').map(x => parseInt(x, 10)).filter(n => !Number.isNaN(n));
   const len = Math.max(na.length, nb.length);
-  
+
   for (let i = 0; i < len; i++) {
     const va = na[i] || 0;
     const vb = nb[i] || 0;
@@ -97,12 +97,12 @@ function walk(obj, trail = [], out = []) {
 function build() {
   console.log('Loading browser release data...');
   const releases = Object.fromEntries(TARGET_BROWSERS.map(b => [b, loadReleases(b)]));
-  
+
   // Log release data stats
   for (const [browser, data] of Object.entries(releases)) {
     console.log(`${browser}: ${Object.keys(data).length} releases loaded`);
   }
-  
+
   const result = Object.fromEntries(TARGET_BROWSERS.map(b => [b, []]));
   let totalFeatures = 0;
   let processedFiles = 0;
@@ -124,7 +124,7 @@ function build() {
   function processFile(p) {
     const json = readJSON(p);
     if (!json) return;
-    
+
     const nodes = walk(json, ['javascript']);
     for (const node of nodes) {
       const compat = node.compat || {};
@@ -136,11 +136,11 @@ function build() {
       for (const browser of TARGET_BROWSERS) {
         const stmt = support[browser];
         if (!stmt) continue;
-        
+
         const normalized = normalizeSupport(stmt);
         const stableEntries = normalized.filter(isStable);
         const unstableEntries = normalized.filter(isUnstable);
-        
+
         // Process stable entries
         if (stableEntries.length > 0) {
           stableEntries.sort((a, b) => compareVersions(a.version_added, b.version_added));
@@ -175,7 +175,7 @@ function build() {
           });
           totalFeatures++;
         }
-        
+
         // Process unstable entries
         if (unstableEntries.length > 0) {
           unstableEntries.sort((a, b) => compareVersions(a.version_added, b.version_added));
@@ -226,7 +226,7 @@ function build() {
       }
       if (a.date && !b.date) return -1;
       if (!a.date && b.date) return 1;
-      
+
       // Secondary sort: by version (newest first)
       return compareVersions(b.version || '0', a.version || '0');
     });
@@ -234,7 +234,7 @@ function build() {
 
   // Ensure output directory exists
   fs.mkdirSync(OUT, { recursive: true });
-  
+
   // Collect browser releases for timeline
   const browserReleases = {};
   for (const browser of TARGET_BROWSERS) {
@@ -246,7 +246,7 @@ function build() {
         status: data.status || 'unknown'
       }))
       .sort((a, b) => a.date.localeCompare(b.date));
-    
+
     browserReleases[browser] = browserReleaseData;
   }
 
@@ -255,9 +255,9 @@ function build() {
     browsers: result,
     releases: browserReleases
   };
-  
+
   fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2));
-  
+
   console.log(`\nBuild complete!`);
   console.log(`- Processed ${processedFiles} JSON files`);
   console.log(`- Found ${totalFeatures} total feature implementations`);
