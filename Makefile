@@ -1,7 +1,7 @@
 # JavaScript Feature Timeline - Makefile
 # Provides convenient commands for updating and managing the project
 
-.PHONY: help build clean update serve install-deps check-deps
+.PHONY: help build clean update auto-update serve install-deps check-deps
 
 # Default target
 help:
@@ -9,6 +9,7 @@ help:
 	@echo ""
 	@echo "  make build        - Build the index.json from BCD data"
 	@echo "  make update       - Update BCD data and rebuild index"
+	@echo "  make auto-update  - Update, then prompt to commit and push"
 	@echo "  make clean        - Remove generated files"
 	@echo "  make serve        - Start local development server"
 	@echo "  make check-deps   - Check if required dependencies are available"
@@ -67,6 +68,34 @@ serve: check-deps
 	@echo "Website will be available at: http://localhost:8080"
 	@echo "Press Ctrl+C to stop the server"
 	@npx http-server . -p 8080
+
+# Interactive update with commit/push prompts
+auto-update: update
+	@if git diff --quiet browser-compat-data public/data/index.json 2>/dev/null; then \
+		echo ""; \
+		echo "No changes to commit."; \
+	else \
+		echo ""; \
+		echo "Files changed:"; \
+		git diff --stat browser-compat-data public/data/index.json; \
+		echo ""; \
+		read -p "Commit changes? [y/N] " commit_answer; \
+		if [ "$$commit_answer" = "y" ] || [ "$$commit_answer" = "Y" ]; then \
+			git add browser-compat-data public/data/index.json; \
+			git commit -m "Update feature specs from browser-compat-data"; \
+			echo "✅ Changes committed."; \
+			echo ""; \
+			read -p "Push to remote? [y/N] " push_answer; \
+			if [ "$$push_answer" = "y" ] || [ "$$push_answer" = "Y" ]; then \
+				git push; \
+				echo "✅ Pushed to remote."; \
+			else \
+				echo "Skipping push."; \
+			fi; \
+		else \
+			echo "Skipping commit."; \
+		fi; \
+	fi
 
 # Development workflow: update, build, and serve
 dev: update serve
