@@ -12,6 +12,111 @@ const OUT_FILE = path.join(OUT, 'index.json');
 
 const TARGET_BROWSERS = ['chrome', 'firefox', 'safari', 'edge'];
 
+function loadExistingIndex() {
+  try {
+    if (fs.existsSync(OUT_FILE)) {
+      return JSON.parse(fs.readFileSync(OUT_FILE, 'utf8'));
+    }
+  } catch (e) {
+    console.warn('Could not load existing index.json:', e.message);
+  }
+  return null;
+}
+
+function compareFeatures(oldData, newData) {
+  const changes = { new: [], updated: [] };
+
+  for (const browser of TARGET_BROWSERS) {
+    const oldFeatures = oldData?.browsers?.[browser] || [];
+    const newFeatures = newData.browsers[browser] || [];
+
+    // Build lookup maps by feature_id
+    const oldMap = new Map(oldFeatures.map(f => [f.feature_id, f]));
+    const newMap = new Map(newFeatures.map(f => [f.feature_id, f]));
+
+    for (const [featureId, newFeature] of newMap) {
+      const oldFeature = oldMap.get(featureId);
+
+      if (!oldFeature) {
+        // New feature
+        changes.new.push({ browser, feature: newFeature });
+      } else {
+        // Check if updated (version or date changed)
+        if (oldFeature.version !== newFeature.version ||
+            oldFeature.date !== newFeature.date ||
+            oldFeature.version_removed !== newFeature.version_removed) {
+          changes.updated.push({ browser, feature: newFeature, old: oldFeature });
+        }
+      }
+    }
+  }
+
+  return changes;
+}
+
+function printChanges(changes) {
+  const newCount = changes.new.length;
+  const updatedCount = changes.updated.length;
+
+  console.log('\n' + '='.repeat(60));
+  console.log(`Changes: ${newCount} new, ${updatedCount} updated`);
+  console.log('='.repeat(60));
+
+  if (newCount > 0) {
+    console.log(`\n✨ New features (${newCount}):`);
+    // Group by browser
+    const byBrowser = {};
+    for (const { browser, feature } of changes.new) {
+      if (!byBrowser[browser]) byBrowser[browser] = [];
+      byBrowser[browser].push(feature);
+    }
+    for (const browser of TARGET_BROWSERS) {
+      const features = byBrowser[browser] || [];
+      if (features.length > 0) {
+        console.log(`  ${browser} (${features.length}):`);
+        for (const f of features.slice(0, 20)) {
+          const dateStr = f.date ? ` (${f.date})` : '';
+          console.log(`    - ${f.name} v${f.version}${dateStr}`);
+        }
+        if (features.length > 20) {
+          console.log(`    ... and ${features.length - 20} more`);
+        }
+      }
+    }
+  }
+
+  if (updatedCount > 0) {
+    console.log(`\n📝 Updated features (${updatedCount}):`);
+    const byBrowser = {};
+    for (const { browser, feature, old } of changes.updated) {
+      if (!byBrowser[browser]) byBrowser[browser] = [];
+      byBrowser[browser].push({ feature, old });
+    }
+    for (const browser of TARGET_BROWSERS) {
+      const items = byBrowser[browser] || [];
+      if (items.length > 0) {
+        console.log(`  ${browser} (${items.length}):`);
+        for (const { feature, old } of items.slice(0, 20)) {
+          const versionChange = old.version !== feature.version
+            ? ` v${old.version} → v${feature.version}`
+            : '';
+          const dateChange = old.date !== feature.date
+            ? ` date: ${old.date || 'none'} → ${feature.date || 'none'}`
+            : '';
+          console.log(`    - ${feature.name}${versionChange}${dateChange}`);
+        }
+        if (items.length > 20) {
+          console.log(`    ... and ${items.length - 20} more`);
+        }
+      }
+    }
+  }
+
+  if (newCount === 0 && updatedCount === 0) {
+    console.log('\nNo changes detected.');
+  }
+}
+
 function readJSON(p) {
   try {
     return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -95,6 +200,9 @@ function walk(obj, trail = [], out = []) {
 }
 
 function build() {
+  // Load existing index for comparison
+  const existingIndex = loadExistingIndex();
+
   console.log('Loading browser release data...');
   const releases = Object.fromEntries(TARGET_BROWSERS.map(b => [b, loadReleases(b)]));
 
@@ -265,6 +373,14 @@ function build() {
     console.log(`- ${browser}: ${result[browser].length} features`);
   }
   console.log(`- Output: ${OUT_FILE}`);
+
+  // Compare and print changes
+  if (existingIndex) {
+    const changes = compareFeatures(existingIndex, output);
+    printChanges(changes);
+  } else {
+    console.log('\nNo previous index.json found - skipping change comparison.');
+  }
 }
 
 build();
