@@ -1,7 +1,26 @@
 {
-  "generated_at": "2026-02-04T10:22:57.982Z",
+  "generated_at": "2026-02-16T14:08:41.882Z",
   "browsers": {
     "chrome": [
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.concat",
+        "name": "Iterator.concat",
+        "method_name": "concat",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-iterator.concat",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/concat",
+        "version": "146",
+        "version_removed": null,
+        "date": "2026-03-10",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
       {
         "feature_id": "javascript.javascript.builtins.Map.getOrInsert",
         "name": "Map.getOrInsert",
@@ -25978,6 +25997,44 @@
     ],
     "firefox": [
       {
+        "feature_id": "javascript.javascript.builtins.Iterator.zip",
+        "name": "Iterator.zip",
+        "method_name": "zip",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-IteratorZip",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zip",
+        "version": "148",
+        "version_removed": null,
+        "date": "2026-02-24",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.zipKeyed",
+        "name": "Iterator.zipKeyed",
+        "method_name": "zipKeyed",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-iterator.zipkeyed",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zipKeyed",
+        "version": "148",
+        "version_removed": null,
+        "date": "2026-02-24",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
         "feature_id": "javascript.javascript.builtins.Iterator.concat",
         "name": "Iterator.concat",
         "method_name": "concat",
@@ -35069,25 +35126,6 @@
         "notes": null
       },
       {
-        "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_currencyDisplay_parameter",
-        "name": "options_parameter.options_currencyDisplay_parameter",
-        "method_name": "options_currencyDisplay_parameter",
-        "type_name": "options_parameter",
-        "description": "`options.currencyDisplay` parameter",
-        "spec_url": null,
-        "mdn_url": null,
-        "version": "78",
-        "version_removed": null,
-        "date": "2020-06-30",
-        "date_removed": null,
-        "stable": true,
-        "flags": null,
-        "prefix": null,
-        "alternative_name": null,
-        "partial_implementation": false,
-        "notes": null
-      },
-      {
         "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_currencySign_parameter",
         "name": "options_parameter.options_currencySign_parameter",
         "method_name": "options_currencySign_parameter",
@@ -35336,6 +35374,25 @@
       },
       {
         "feature_id": "javascript.javascript.builtins.Intl.DateTimeFormat.DateTimeFormat.options_parameter.options_numberingSystem_parameter",
+        "name": "options_parameter.options_numberingSystem_parameter",
+        "method_name": "options_numberingSystem_parameter",
+        "type_name": "options_parameter",
+        "description": "`options.numberingSystem` parameter",
+        "spec_url": null,
+        "mdn_url": null,
+        "version": "76",
+        "version_removed": null,
+        "date": "2020-05-05",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_numberingSystem_parameter",
         "name": "options_parameter.options_numberingSystem_parameter",
         "method_name": "options_numberingSystem_parameter",
         "type_name": "options_parameter",
@@ -39063,6 +39120,25 @@
         "notes": null
       },
       {
+        "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_currencyDisplay_parameter",
+        "name": "options_parameter.options_currencyDisplay_parameter",
+        "method_name": "options_currencyDisplay_parameter",
+        "type_name": "options_parameter",
+        "description": "`options.currencyDisplay` parameter",
+        "spec_url": null,
+        "mdn_url": null,
+        "version": "42",
+        "version_removed": null,
+        "date": "2015-11-03",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
         "feature_id": "javascript.javascript.builtins.Reflect",
         "name": "builtins.Reflect",
         "method_name": "Reflect",
@@ -41807,25 +41883,6 @@
         "method_name": "options_minimumSignificantDigits_parameter",
         "type_name": "options_parameter",
         "description": "`options.minimumSignificantDigits` parameter",
-        "spec_url": null,
-        "mdn_url": null,
-        "version": "29",
-        "version_removed": null,
-        "date": "2014-04-29",
-        "date_removed": null,
-        "stable": true,
-        "flags": null,
-        "prefix": null,
-        "alternative_name": null,
-        "partial_implementation": false,
-        "notes": null
-      },
-      {
-        "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_numberingSystem_parameter",
-        "name": "options_parameter.options_numberingSystem_parameter",
-        "method_name": "options_numberingSystem_parameter",
-        "type_name": "options_parameter",
-        "description": "`options.numberingSystem` parameter",
         "spec_url": null,
         "mdn_url": null,
         "version": "29",
@@ -56174,6 +56231,25 @@
         "notes": null
       },
       {
+        "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_numberingSystem_parameter",
+        "name": "options_parameter.options_numberingSystem_parameter",
+        "method_name": "options_numberingSystem_parameter",
+        "type_name": "options_parameter",
+        "description": "`options.numberingSystem` parameter",
+        "spec_url": null,
+        "mdn_url": null,
+        "version": "14.1",
+        "version_removed": null,
+        "date": "2021-04-26",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
         "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_signDisplay_parameter",
         "name": "options_parameter.options_signDisplay_parameter",
         "method_name": "options_signDisplay_parameter",
@@ -59808,25 +59884,6 @@
         "method_name": "options_minimumSignificantDigits_parameter",
         "type_name": "options_parameter",
         "description": "`options.minimumSignificantDigits` parameter",
-        "spec_url": null,
-        "mdn_url": null,
-        "version": "10",
-        "version_removed": null,
-        "date": "2016-09-20",
-        "date_removed": null,
-        "stable": true,
-        "flags": null,
-        "prefix": null,
-        "alternative_name": null,
-        "partial_implementation": false,
-        "notes": null
-      },
-      {
-        "feature_id": "javascript.javascript.builtins.Intl.NumberFormat.NumberFormat.options_parameter.options_numberingSystem_parameter",
-        "name": "options_parameter.options_numberingSystem_parameter",
-        "method_name": "options_numberingSystem_parameter",
-        "type_name": "options_parameter",
-        "description": "`options.numberingSystem` parameter",
         "spec_url": null,
         "mdn_url": null,
         "version": "10",
@@ -89426,16 +89483,21 @@
       {
         "version": "144",
         "date": "2026-01-13",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "145",
         "date": "2026-02-10",
-        "status": "beta"
+        "status": "current"
       },
       {
         "version": "146",
         "date": "2026-03-10",
+        "status": "beta"
+      },
+      {
+        "version": "147",
+        "date": "2026-04-07",
         "status": "nightly"
       }
     ],
@@ -90485,12 +90547,12 @@
       {
         "version": "26.2",
         "date": "2025-12-12",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "26.3",
-        "date": "2025-12-15",
-        "status": "beta"
+        "date": "2026-02-11",
+        "status": "current"
       }
     ],
     "edge": [
@@ -90852,22 +90914,22 @@
       {
         "version": "144",
         "date": "2026-01-21",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "145",
-        "date": "2026-02-12",
-        "status": "beta"
+        "date": "2026-02-14",
+        "status": "current"
       },
       {
         "version": "146",
         "date": "2026-03-12",
-        "status": "nightly"
+        "status": "beta"
       },
       {
         "version": "147",
         "date": "2026-04-09",
-        "status": "planned"
+        "status": "nightly"
       }
     ]
   }
