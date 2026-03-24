@@ -1,7 +1,26 @@
 {
-  "generated_at": "2026-02-16T14:08:41.882Z",
+  "generated_at": "2026-03-24T13:15:34.437Z",
   "browsers": {
     "chrome": [
+      {
+        "feature_id": "javascript.javascript.builtins.Math.sumPrecise",
+        "name": "Math.sumPrecise",
+        "method_name": "sumPrecise",
+        "type_name": "Math",
+        "description": "",
+        "spec_url": "https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-math.sumprecise",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/sumPrecise",
+        "version": "147",
+        "version_removed": null,
+        "date": "2026-04-07",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
       {
         "feature_id": "javascript.javascript.builtins.Iterator.concat",
         "name": "Iterator.concat",
@@ -26023,6 +26042,25 @@
         "description": "",
         "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-iterator.zipkeyed",
         "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zipKeyed",
+        "version": "148",
+        "version_removed": null,
+        "date": "2026-02-24",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.RegExp.compile.rexexp_legacy_features",
+        "name": "compile.rexexp_legacy_features",
+        "method_name": "rexexp_legacy_features",
+        "type_name": "compile",
+        "description": "Throws `TypeError` when used in `RegExp` subclass or with cross-realm mismatch.",
+        "spec_url": null,
+        "mdn_url": null,
         "version": "148",
         "version_removed": null,
         "date": "2026-02-24",
@@ -52735,6 +52773,25 @@
         "notes": null
       },
       {
+        "feature_id": "javascript.javascript.builtins.JSON.isRawJSON",
+        "name": "JSON.isRawJSON",
+        "method_name": "isRawJSON",
+        "type_name": "JSON",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-json-parse-with-source/#sec-json.israwjson",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/isRawJSON",
+        "version": "18.4",
+        "version_removed": null,
+        "date": "2025-03-31",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
         "feature_id": "javascript.javascript.builtins.JSON.parse.reviver_parameter_context_argument",
         "name": "parse.reviver_parameter_context_argument",
         "method_name": "reviver_parameter_context_argument",
@@ -52742,6 +52799,25 @@
         "description": "Reviver has `context` parameter",
         "spec_url": "https://tc39.es/proposal-json-parse-with-source/#sec-internalizejsonproperty",
         "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#the_reviver_parameter",
+        "version": "18.4",
+        "version_removed": null,
+        "date": "2025-03-31",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.JSON.rawJSON",
+        "name": "JSON.rawJSON",
+        "method_name": "rawJSON",
+        "type_name": "JSON",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-json-parse-with-source/#sec-json.rawjson",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/rawJSON",
         "version": "18.4",
         "version_removed": null,
         "date": "2025-03-31",
@@ -54246,6 +54322,25 @@
         "version": "16",
         "version_removed": null,
         "date": "2022-09-12",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.RegExp.compile.rexexp_legacy_features",
+        "name": "compile.rexexp_legacy_features",
+        "method_name": "rexexp_legacy_features",
+        "type_name": "compile",
+        "description": "Throws `TypeError` when used in `RegExp` subclass or with cross-realm mismatch.",
+        "spec_url": null,
+        "mdn_url": null,
+        "version": "15.6",
+        "version_removed": null,
+        "date": "2022-07-20",
         "date_removed": null,
         "stable": true,
         "flags": null,
@@ -73046,6 +73141,25 @@
         "notes": null
       },
       {
+        "feature_id": "javascript.javascript.builtins.Iterator.concat",
+        "name": "Iterator.concat",
+        "method_name": "concat",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-iterator.concat",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/concat",
+        "version": "26.4",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
         "feature_id": "javascript.javascript.builtins.Date.UTC.optional_monthIndex",
         "name": "UTC.optional_monthIndex",
         "method_name": "optional_monthIndex",
@@ -89488,16 +89602,21 @@
       {
         "version": "145",
         "date": "2026-02-10",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "146",
         "date": "2026-03-10",
-        "status": "beta"
+        "status": "current"
       },
       {
         "version": "147",
         "date": "2026-04-07",
+        "status": "beta"
+      },
+      {
+        "version": "148",
+        "date": "2026-05-05",
         "status": "nightly"
       }
     ],
@@ -90250,21 +90369,26 @@
       {
         "version": "147",
         "date": "2026-01-13",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "148",
         "date": "2026-02-24",
-        "status": "beta"
+        "status": "current"
       },
       {
         "version": "149",
         "date": "2026-03-24",
-        "status": "nightly"
+        "status": "beta"
       },
       {
         "version": "150",
         "date": "2026-04-21",
+        "status": "nightly"
+      },
+      {
+        "version": "151",
+        "date": "2026-05-19",
         "status": "planned"
       }
     ],
@@ -90919,17 +91043,27 @@
       {
         "version": "145",
         "date": "2026-02-14",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "146",
-        "date": "2026-03-12",
-        "status": "beta"
+        "date": "2026-03-13",
+        "status": "current"
       },
       {
         "version": "147",
         "date": "2026-04-09",
+        "status": "beta"
+      },
+      {
+        "version": "148",
+        "date": "2026-05-07",
         "status": "nightly"
+      },
+      {
+        "version": "149",
+        "date": "2026-06-04",
+        "status": "planned"
       }
     ]
   }
