@@ -45,13 +45,7 @@ build: check-deps
 # Update BCD data and rebuild
 update:
 	@echo "Updating browser-compat-data..."
-	@if [ ! -d browser-compat-data ]; then \
-		echo "Cloning browser-compat-data repository..."; \
-		git clone https://github.com/mdn/browser-compat-data.git; \
-	else \
-		echo "Updating existing browser-compat-data repository..."; \
-		cd browser-compat-data && git pull origin main; \
-	fi
+	@git submodule update --init --remote browser-compat-data
 	@echo "Rebuilding index.json..."
 	@node scripts/build-index.js
 	@echo "✅ Update complete! Data refreshed and index rebuilt."

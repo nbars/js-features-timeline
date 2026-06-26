@@ -1,3 +1,4 @@
 [submodule "browser-compat-data"]
 	path = browser-compat-data
 	url = https://github.com/mdn/browser-compat-data.git
+	branch = main
