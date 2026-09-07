@@ -1,7 +1,64 @@
 {
-  "generated_at": "2026-08-26T14:08:01.149Z",
+  "generated_at": "2026-09-07T20:56:11.037Z",
   "browsers": {
     "chrome": [
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.join",
+        "name": "Iterator.join",
+        "method_name": "join",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-iterator-join/#sec-iterator.prototype.join",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/join",
+        "version": "153",
+        "version_removed": null,
+        "date": "2026-09-08",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.zip",
+        "name": "Iterator.zip",
+        "method_name": "zip",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-IteratorZip",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zip",
+        "version": "153",
+        "version_removed": null,
+        "date": "2026-09-08",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.zipKeyed",
+        "name": "Iterator.zipKeyed",
+        "method_name": "zipKeyed",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-iterator.zipkeyed",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zipKeyed",
+        "version": "153",
+        "version_removed": null,
+        "date": "2026-09-08",
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
       {
         "feature_id": "javascript.javascript.builtins.Intl.Locale.variants",
         "name": "Locale.variants",
@@ -26060,7 +26117,7 @@
         "type_name": "Promise",
         "description": "",
         "spec_url": "https://tc39.es/proposal-await-dictionary/#sec-promise.allkeyed",
-        "mdn_url": null,
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/allKeyed",
         "version": "155",
         "version_removed": null,
         "date": "2026-09-01",
@@ -26079,7 +26136,7 @@
         "type_name": "Promise",
         "description": "",
         "spec_url": "https://tc39.es/proposal-await-dictionary/#sec-promise.allsettledkeyed",
-        "mdn_url": null,
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettledKeyed",
         "version": "155",
         "version_removed": null,
         "date": "2026-09-01",
@@ -74008,6 +74065,120 @@
         "notes": null
       },
       {
+        "feature_id": "javascript.javascript.builtins.Iterator.chunks",
+        "name": "Iterator.chunks",
+        "method_name": "chunks",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-iterator-chunking/#sec-iterator.prototype.chunks",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/chunks",
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.includes",
+        "name": "Iterator.includes",
+        "method_name": "includes",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-iterator-includes/#sec-iterator.prototype.includes",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/includes",
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.join",
+        "name": "Iterator.join",
+        "method_name": "join",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-iterator-join/#sec-iterator.prototype.join",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/join",
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.windows",
+        "name": "Iterator.windows",
+        "method_name": "windows",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-iterator-chunking/#sec-iterator.prototype.windows",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/windows",
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.zip",
+        "name": "Iterator.zip",
+        "method_name": "zip",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-IteratorZip",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zip",
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.builtins.Iterator.zipKeyed",
+        "name": "Iterator.zipKeyed",
+        "method_name": "zipKeyed",
+        "type_name": "Iterator",
+        "description": "",
+        "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-iterator.zipkeyed",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zipKeyed",
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
         "feature_id": "javascript.javascript.builtins.Iterator.@@dispose",
         "name": "Iterator.@@dispose",
         "method_name": "@@dispose",
@@ -78663,6 +78834,25 @@
         "notes": null
       },
       {
+        "feature_id": "javascript.javascript.regular_expressions.buffer_boundary_assertion",
+        "name": "regular_expressions.buffer_boundary_assertion",
+        "method_name": "buffer_boundary_assertion",
+        "type_name": "regular_expressions",
+        "description": "Buffer boundary assertion: `\\A`, `\\z`, `\\Z`",
+        "spec_url": "https://tc39.es/proposal-regexp-buffer-boundaries/#sec-patterns",
+        "mdn_url": null,
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
         "feature_id": "javascript.javascript.statements.await_using",
         "name": "statements.await_using",
         "method_name": "await_using",
@@ -78670,6 +78860,25 @@
         "description": "`await using` declaration",
         "spec_url": "https://tc39.es/proposal-async-explicit-resource-management/#prod-AwaitUsingDeclaration",
         "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/await_using",
+        "version": "preview",
+        "version_removed": null,
+        "date": null,
+        "date_removed": null,
+        "stable": true,
+        "flags": null,
+        "prefix": null,
+        "alternative_name": null,
+        "partial_implementation": false,
+        "notes": null
+      },
+      {
+        "feature_id": "javascript.javascript.statements.import.defer",
+        "name": "import.defer",
+        "method_name": "defer",
+        "type_name": "import",
+        "description": "`import defer`",
+        "spec_url": "https://tc39.es/proposal-defer-import-eval/#sec-left-hand-side-expressions",
+        "mdn_url": null,
         "version": "preview",
         "version_removed": null,
         "date": null,
@@ -94791,21 +95000,26 @@
       {
         "version": "154",
         "date": "2026-08-18",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "155",
         "date": "2026-09-01",
-        "status": "beta"
+        "status": "current"
       },
       {
         "version": "156",
         "date": "2026-09-15",
-        "status": "nightly"
+        "status": "beta"
       },
       {
         "version": "157",
         "date": "2026-09-29",
+        "status": "nightly"
+      },
+      {
+        "version": "158",
+        "date": "2026-10-13",
         "status": "planned"
       }
     ],
@@ -95505,21 +95719,26 @@
       {
         "version": "151",
         "date": "2026-07-31",
-        "status": "current"
+        "status": "retired"
       },
       {
         "version": "152",
-        "date": "2026-08-27",
-        "status": "beta"
+        "date": "2026-08-28",
+        "status": "current"
       },
       {
         "version": "153",
         "date": "2026-09-10",
-        "status": "nightly"
+        "status": "beta"
       },
       {
         "version": "154",
         "date": "2026-09-24",
+        "status": "nightly"
+      },
+      {
+        "version": "155",
+        "date": "2026-10-08",
         "status": "planned"
       }
     ]
